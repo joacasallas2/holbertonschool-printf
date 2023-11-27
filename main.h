@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <unistd.h>
+
+#define BUFFSIZE 1024
 
 /**
  * struct op - Struct op
@@ -21,7 +24,7 @@ typedef struct op
 
 
 int _putchar(char c);
-void printFun(const char *const format, ...);
+int _printf(const char *format, ...);
 int getChar(va_list args);
 int getInt(va_list args);
 int getFloat(va_list args);
