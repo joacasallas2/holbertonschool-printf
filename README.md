@@ -38,6 +38,15 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 |b: the unsigned int argument is converted to binary|
 |Handle the following conversion specifiers: u, o, x, X|
 |Use a local buffer of 1024 chars in order to call write as little as possible.|
+|Handle the secifiers: s, p|
+|Handle the length secifiers: l, h|
+|Handle the field width for non-custom conversion specifiers.|
+|Handle the precision for non-custom conversion specifiers.|
+|Handle the 0 flag character for non-custom conversion specifiers.|
+|Handle the following custom conversion specifier: r =  prints the reversed string|
+|Handle the following custom conversion specifier: r =  R: prints the rot13'ed string|
+
+
 
 
 
