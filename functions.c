@@ -1,57 +1,35 @@
 #include "main.h"
 /**
- * getChar - Function that prints a char
+ * getChar - Function that return a char
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getChar(va_list args)
-{
-	int element;
+int getChar(va_list args) { return (va_arg(args, int)); }
 
-	element = va_arg(args, int);
-	printf("%c", element);
-	return (0);
-}
 /**
- * getInt - Function that prints an integer
+ * getInt - Function that return an integer
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getInt(va_list args)
-{
-	int element;
+int getInt(va_list args) { return (48 + (va_arg(args, int))); }
 
-	element = va_arg(args, int);
-	printf("%i", element);
-	return (0);
-}
 /**
- * getFloat - Function that prints a float
+ * getFloat - Function that return a float
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getFloat(va_list args)
-{
-	float element;
+int getFloat(va_list args) { return (48 + (va_arg(args, double))); }
 
-	element = va_arg(args, double);
-	printf("%f", element);
-	return (0);
-}
 /**
- * getString - Function that prints a String
+ * getString - Function that return a String
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getString(va_list args)
-{
-	char *elementString;
+char *getString(va_list args) { return (va_arg(args, char *)); }
 
-	elementString = va_arg(args, char *);
-	if (elementString == NULL)
-	{
-		elementString = "(nil)";
-	}
-	printf("%s", elementString);
-	return (0);
-}
+/**
+ * getPer - Function that return a Percent sign
+ * @args: The list of args to run
+ * Return: Always 0 (Success)
+ */
+int getPer(__attribute__((unused)) va_list args) { return ('%'); }

@@ -24,7 +24,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 |Files|
 |-----------|
 |1. [main.h](https://github.com/joacasallas2/holbertonschool-printf/tree/main/main.h)|
-|2. [printFun.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/printFunction.c)|
+|2. [_printf.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/printFunction.c)|
 |3. [main.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/main.c)|
 |4. [get_op_fun.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/get_function.c)|
 |5. [functions.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/functions.c)|  
