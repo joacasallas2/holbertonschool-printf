@@ -27,7 +27,7 @@ int _printf(const char *format, ...);
 int getChar(va_list args);
 int getInt(va_list args);
 int getFloat(va_list args);
-char *getString(va_list args);
+int getStr(va_list args);
 int getPer(va_list args);
 int (*get_op_fun(char s))(va_list args);
 

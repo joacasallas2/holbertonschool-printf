@@ -1,4 +1,5 @@
 #include "main.h"
+int getStr(va_list args);
 /**
  * get_op_fun - Function that return the required function
  * @s: This is the format required
@@ -12,11 +13,12 @@ int (*get_op_fun(char s))(va_list args)
 		{"d", getInt},
 		{"f", getFloat},
 		{"%", getPer},
+		{"s", getStr},
 	};
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (i < 6)
 	{
 		if (s == *ops[i].op)
 		{

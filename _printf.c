@@ -8,43 +8,42 @@
  */
 int _printf(const char *format, ...)
 {
-	char *buffer;
 	va_list args;
-	char symbol;
-	int i, j;
-	int (*functionPtr)(va_list);
+	char symbol, *buffer;
+	int i, j, k, len, (*functionPtr)(va_list);
 
+	k = len = 0;
 	buffer = malloc(BUFFSIZE);
 	if (buffer == NULL)
 		return ('\0');
 	va_start(args, format);
-	for (i = 0, j = 0; format[i]; i++)
+	for (i = j = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
+			buffer[k] = '\0';
+			write(1, buffer, k);
 			i++;
+			k = 0;
 			symbol = format[i];
 			functionPtr = get_op_fun(symbol);
 			if (functionPtr == NULL)
-			{
 				continue;
-			}
 			else
 			{
-				buffer[j] = functionPtr(args);
-				j++;
+				len = functionPtr(args);
+				j += len;
+				len = 0;
 			}
+			i++;
 		}
-		else
-		{
-			buffer[j] = format[i];
-			j++;
-		}
+		buffer[k] = format[i];
+		k++;
+		j++;
 	}
-	buffer[j] = '\0';
+	buffer[k] = '\0';
 	write(1, buffer, strlen(buffer));
 	free(buffer);
 	va_end(args);
-
 	return (j);
 }

@@ -1,35 +1,98 @@
 #include "main.h"
 /**
- * getChar - Function that return a char
+ * getChar - Function that print a char
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getChar(va_list args) { return (va_arg(args, int)); }
+int getChar(va_list args)
+{
+	char letter;
+
+	letter = va_arg(args, int);
+	_putchar(letter);
+	return (1);
+}
 
 /**
- * getInt - Function that return an integer
+ * getInt - Function that print an integer
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getInt(va_list args) { return (48 + (va_arg(args, int))); }
+int getInt(va_list args)
+{
+	int num, mul, num2, len;
+
+	num = va_arg(args, int);
+	num2 = num;
+	mul = len = 0;
+	while (num / 10)
+	{
+		num = num / 10;
+		mul++;
+	}
+	while (mul > 0)
+	{
+		_putchar(48 + num);
+		len++;
+		mul--;
+	}
+	_putchar(48 + (num2 % 10));
+	len++;
+	return (len);
+}
 
 /**
- * getFloat - Function that return a float
+ * getFloat - Function that print a float
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getFloat(va_list args) { return (48 + (va_arg(args, double))); }
+int getFloat(va_list args)
+{
+	float num, mul, num2, len;
+
+	num = va_arg(args, double);
+	mul = len = 0;
+	num2 = num;
+	while (num2 / 10)
+	{
+		num2 = num2 / 10;
+		mul++;
+	}
+	while (mul > 0)
+	{
+		num = (int)num % 10;
+		mul--;
+		_putchar((float)num);
+		len++;
+	}
+	return (len);
+}
 
 /**
- * getString - Function that return a String
+ * getStr - Function that print a String
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-char *getString(va_list args) { return (va_arg(args, char *)); }
+int getStr(va_list args)
+{
+	char *str;
+	int i;
+
+	str = va_arg(args, char *);
+	for (i = 0; str[i]; i++)
+	{
+		_putchar(str[i]);
+	}
+	return (i);
+}
 
 /**
- * getPer - Function that return a Percent sign
+ * getPer - Function that print a Percent sign
  * @args: The list of args to run
  * Return: Always 0 (Success)
  */
-int getPer(__attribute__((unused)) va_list args) { return ('%'); }
+int getPer(__attribute__((unused)) va_list args)
+{
+	_putchar('%');
+	return (1);
+}
