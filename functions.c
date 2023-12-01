@@ -79,6 +79,10 @@ int getStr(va_list args)
 	int i;
 
 	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	for (i = 0; str[i]; i++)
 	{
 		_putchar(str[i]);
