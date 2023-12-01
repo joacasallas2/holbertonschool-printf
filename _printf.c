@@ -37,6 +37,10 @@ int _printf(const char *format, ...)
 			}
 			i++;
 		}
+		if (format[i] == '\0')
+		{
+			break;
+		}
 		buffer[k] = format[i];
 		k++;
 		j++;
