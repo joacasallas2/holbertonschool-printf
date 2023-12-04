@@ -16,6 +16,10 @@ int _printf(const char *format, ...)
 	{
 		return(-1);
 	}
+	if (strlen(format) == 1 && format[0] == '%')
+	{
+		return (-1);
+	}
 	k = len = 0;
 	buffer = malloc(BUFFSIZE);
 	if (buffer == NULL)
