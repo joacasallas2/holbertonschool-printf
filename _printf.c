@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
 	if (strlen(format) == 1 && format[0] == '%')
 	{
@@ -41,15 +41,27 @@ int _printf(const char *format, ...)
 			write(1, buffer, k);
 			i++;
 			k = 0;
-			symbol = format[i];
-			functionPtr = get_op_fun(symbol);
-			if (functionPtr == NULL)
-				continue;
+			if (format[i] == '!')
+			{
+				buffer[k] = '%';
+				j++;
+				k++;
+				buffer[k] = format[i];
+				j++;
+				k++;
+			}
 			else
 			{
-				len = functionPtr(args);
-				j += len;
-				len = 0;
+				symbol = format[i];
+				functionPtr = get_op_fun(symbol);
+				if (functionPtr == NULL)
+					continue;
+				else
+				{
+					len = functionPtr(args);
+					j += len;
+					len = 0;
+				}
 			}
 		}
 	}
