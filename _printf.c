@@ -19,6 +19,14 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	for (i = j = 0; format[i]; i++)
 	{
+		if (format[i] == '\0')
+			break;
+		if (format[i] != '%')
+		{
+			buffer[k] = format[i];
+			k++;
+			j++;
+		}
 		if (format[i] == '%')
 		{
 			buffer[k] = '\0';
@@ -35,13 +43,7 @@ int _printf(const char *format, ...)
 				j += len;
 				len = 0;
 			}
-			i++;
 		}
-		if (format[i] == '\0')
-			break;
-		buffer[k] = format[i];
-		k++;
-		j++;
 	}
 	buffer[k] = '\0';
 	write(1, buffer, strlen(buffer));
