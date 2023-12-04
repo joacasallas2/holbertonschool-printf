@@ -20,13 +20,20 @@ int getChar(va_list args)
  */
 int getInt(va_list args)
 {
-	int i, num, num2, len, mul;
+	int i, num, num2, len, mul, neg;
 
 	mul = 1;
 	num = va_arg(args, int);
-	num2 = num / 10;
+	len = neg = 0;
 
-	for (len = 0; num2 / mul; len++)
+	if (num < 0)
+	{
+		_putchar('-');
+		num *= -1;
+		neg = 1;
+	}
+	num2 = num / 10;
+	for (; num2 / mul; len++)
 	{
 		mul = mul * 10;
 	}
@@ -36,7 +43,7 @@ int getInt(va_list args)
 		mul /= 10;
 	}
 	len++;
-	return (len);
+	return (len + neg);
 }
 
 /**

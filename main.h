@@ -30,6 +30,5 @@ int getFloat(va_list args);
 int getStr(va_list args);
 int getPer(va_list args);
 int (*get_op_fun(char s))(va_list args);
-int _atoi(char *s);
 
 #endif
