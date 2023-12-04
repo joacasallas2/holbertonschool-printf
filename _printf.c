@@ -12,6 +12,10 @@ int _printf(const char *format, ...)
 	char symbol, *buffer;
 	int i, j, k, len, (*functionPtr)(va_list);
 
+	if (format == NULL)
+	{
+		return('\0');
+	}
 	k = len = 0;
 	buffer = malloc(BUFFSIZE);
 	if (buffer == NULL)
