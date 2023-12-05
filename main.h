@@ -32,6 +32,8 @@ int getPer(va_list args);
 int getBin(va_list args);
 int getUnsigned(va_list args);
 int getOctal(va_list args);
+int getHexUpper(va_list args);
+int getHexLow(va_list args);
 int (*get_op_fun(char s))(va_list args);
 
 #endif

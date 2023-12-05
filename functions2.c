@@ -124,3 +124,91 @@ int getOctal(va_list args)
 	}
 	return (len);
 }
+/**
+ * getHexUpper - Function that convert a decimal number in a Haxadecimal
+ * @args: The list of args to run
+ * Return: the large of the character printed
+ */
+int getHexUpper(va_list args)
+{
+	int i, j, num, mod, *buffer, len;
+	int intArray[] = {10,11,12,13,14,15};
+	int hexArray[] = {'A','B','C','D','E','F'};
+
+	len = 0;
+
+	buffer = malloc(BUFFSIZE);
+	if (buffer == NULL)
+	{
+		return ('\0');
+	}
+	num = va_arg(args, int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	for (i = 0; num >= 1; i++)
+	{
+		mod = num % 16;
+		num = num / 16;
+		buffer[i] = mod;
+	}
+	i--;
+	for (; i >= 0; i--, len++)
+	{
+		for (j = 0; j < 6; j++)
+		{
+			if (buffer[i] == intArray[j])
+			{
+				buffer[i] = hexArray[j];
+			}
+		}
+		_putchar(48 + buffer[i]);
+	}
+	return (len);
+}
+/**
+ * getHexLow - Function that convert a decimal number in a Haxadecimal
+ * @args: The list of args to run
+ * Return: the large of the character printed
+ */
+int getHexLow(va_list args)
+{
+	int i, j, num, mod, *buffer, len;
+	int intArray[] = {10,11,12,13,14,15};
+	int hexArray[] = {'a','b','c','d','e','f'};
+
+	len = 0;
+
+	buffer = malloc(BUFFSIZE);
+	if (buffer == NULL)
+	{
+		return ('\0');
+	}
+	num = va_arg(args, int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	for (i = 0; num >= 1; i++)
+	{
+		mod = num % 16;
+		num = num / 16;
+		buffer[i] = mod;
+	}
+	i--;
+	for (; i >= 0; i--, len++)
+	{
+		for (j = 0; j < 6; j++)
+		{
+			if (buffer[i] == intArray[j])
+			{
+				buffer[i] = hexArray[j];
+			}
+		}
+		_putchar(48 + buffer[i]);
+	}
+	return (len);
+}
