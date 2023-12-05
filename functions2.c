@@ -19,8 +19,7 @@ int getBin(va_list args)
 	if (num == 0)
 	{
 		_putchar('0');
-		_putchar('0');
-		return(2);
+		return(1);
 	}
 	if (num < 0)
 	{
