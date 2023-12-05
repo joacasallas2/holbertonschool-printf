@@ -6,9 +6,9 @@
  */
 int getBin(va_list args)
 {
-	int i, num, mod, *buffer, len;
+	int i, num, mod, *buffer, len, neg;
 
-	len = 0;
+	len = neg = 0;
 
 	buffer = malloc(BUFFSIZE);
 	if (buffer == NULL)
@@ -16,6 +16,10 @@ int getBin(va_list args)
 		return ('\0');
 	}
 	num = va_arg(args, int);
+	if (num < 0)
+	{
+		neg = 1;
+	}
 	if (num == 0)
 	{
 		_putchar('0');
@@ -23,8 +27,7 @@ int getBin(va_list args)
 	}
 	if (num < 0)
 	{
-		printf("pending negative number to binary");
-		return (0);
+		neg = 1;
 	}
 	for (i = 0; num >= 1; i++)
 	{
@@ -35,6 +38,17 @@ int getBin(va_list args)
 	i--;
 	for (; i >= 0; i--, len++)
 	{
+		if (neg == 1)
+		{
+			if (buffer[i] == 0)
+			{
+				buffer[i] = 1;
+			}
+			else
+			{
+				buffer[i] = 0;
+			}
+		}
 		_putchar(48 + buffer[i]);
 	}
 	return (len);
