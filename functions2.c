@@ -106,11 +106,6 @@ int getOctal(va_list args)
 		_putchar('0');
 		return (1);
 	}
-	if (num < 0)
-	{
-		printf("pending negative number to binary");
-		return (0);
-	}
 	for (i = 0; num >= 1; i++)
 	{
 		mod = num % 8;

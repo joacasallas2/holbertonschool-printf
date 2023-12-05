@@ -29,6 +29,7 @@ int getInt(va_list args);
 int getFloat(va_list args);
 int getStr(va_list args);
 int getPer(va_list args);
+int getR(va_list args);
 int getBin(va_list args);
 int getUnsigned(va_list args);
 int getOctal(va_list args);

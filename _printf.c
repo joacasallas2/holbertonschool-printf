@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			write(1, buffer, k);
 			i++;
 			k = 0;
-			if (format[i] == '!' || format[i] == 'K')
+			if (format[i] == '!' || format[i] == 'K' || format[i] == 'r')
 			{
 				buffer[k] = '%';
 				j++;
