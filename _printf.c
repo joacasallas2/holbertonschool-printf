@@ -13,13 +13,9 @@ int _printf(const char *format, ...)
 	int i, j, k, len, (*functionPtr)(va_list);
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	if (strlen(format) == 1 && format[0] == '%')
-	{
 		return (-1);
-	}
 	k = len = 0;
 	buffer = malloc(BUFFSIZE);
 	if (buffer == NULL)
