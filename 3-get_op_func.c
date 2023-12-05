@@ -1,4 +1,5 @@
 #include "main.h"
+int getBin(va_list args);
 int getStr(va_list args);
 /**
  * get_op_fun - Function that return the required function
@@ -14,11 +15,12 @@ int (*get_op_fun(char s))(va_list args)
 		{"f", getFloat},
 		{"%", getPer},
 		{"s", getStr},
+		{"b", getBin},
 	};
 	int i;
 
 	i = 0;
-	while (i < 6)
+	while (i < 7)
 	{
 		if (s == *ops[i].op)
 		{
