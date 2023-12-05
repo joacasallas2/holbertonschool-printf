@@ -1,6 +1,7 @@
 #include "main.h"
 int getBin(va_list args);
 int getStr(va_list args);
+int getUnsigned(va_list args);
 /**
  * get_op_fun - Function that return the required function
  * @s: This is the format required
@@ -16,11 +17,12 @@ int (*get_op_fun(char s))(va_list args)
 		{"%", getPer},
 		{"s", getStr},
 		{"b", getBin},
+		{"u", getUnsigned},
 	};
 	int i;
 
 	i = 0;
-	while (i < 7)
+	while (i < 8)
 	{
 		if (s == *ops[i].op)
 		{

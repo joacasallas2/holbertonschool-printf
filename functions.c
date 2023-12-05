@@ -2,7 +2,7 @@
 /**
  * getChar - Function that print a char
  * @args: The list of args to run
- * Return: Always 0 (Success)
+ * Return: the large of the character printed
  */
 int getChar(va_list args)
 {
@@ -16,7 +16,7 @@ int getChar(va_list args)
 /**
  * getInt - Function that print an integer
  * @args: The list of args to run
- * Return: Always 0 (Success)
+ * Return: the large of the character printed
  */
 int getInt(va_list args)
 {
@@ -49,7 +49,7 @@ int getInt(va_list args)
 /**
  * getFloat - Function that print a float
  * @args: The list of args to run
- * Return: Always 0 (Success)
+ * Return: the large of the character printed
  */
 int getFloat(va_list args)
 {
@@ -76,7 +76,7 @@ int getFloat(va_list args)
 /**
  * getStr - Function that print a String
  * @args: The list of args to run
- * Return: Always 0 (Success)
+ * Return: the large of the character printed
  */
 int getStr(va_list args)
 {
@@ -98,7 +98,7 @@ int getStr(va_list args)
 /**
  * getPer - Function that print a Percent sign
  * @args: The list of args to run
- * Return: Always 0 (Success)
+ * Return: the large of the character printed
  */
 int getPer(__attribute__((unused)) va_list args)
 {

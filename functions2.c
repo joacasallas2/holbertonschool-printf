@@ -2,7 +2,7 @@
 /**
  * getBin - Function that convert a decimal number in a binary number
  * @args: The list of args to run
- * Return: Always 0 (Success)
+ * Return: the large of the character printed
  */
 int getBin(va_list args)
 {
@@ -19,7 +19,7 @@ int getBin(va_list args)
 	if (num == 0)
 	{
 		_putchar('0');
-		return(1);
+		return (1);
 	}
 	if (num < 0)
 	{
@@ -37,5 +37,36 @@ int getBin(va_list args)
 	{
 		_putchar(48 + buffer[i]);
 	}
+	return (len);
+}
+
+/**
+ * getUnsigned - Function that get an unsigned number from un int
+ * @args: The list of args to run
+ * Return: the large of the character printed
+ */
+int getUnsigned(va_list args)
+{
+	int i, num, num2, len, mul, neg;
+
+	mul = 1;
+	num = va_arg(args, int);
+	len = neg = 0;
+
+	if (num < 0)
+	{
+		num = UINT_MAX + 1 - num;
+	}
+	num2 = num / 10;
+	for (; num2 / mul; len++)
+	{
+		mul = mul * 10;
+	}
+	for (i = len; i >= 0; i--)
+	{
+		_putchar(48 + (num / mul) % 10);
+		mul /= 10;
+	}
+	len++;
 	return (len);
 }
