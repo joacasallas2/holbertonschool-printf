@@ -16,15 +16,16 @@ int getBin(va_list args)
 		return ('\0');
 	}
 	num = va_arg(args, int);
+	if (num == 0)
+	{
+		_putchar('0');
+		_putchar('0');
+		return(2);
+	}
 	if (num < 0)
 	{
-		num = num * -1;
-		for (i = 0; i < 21; i++)
-		{
-			_putchar('1');
-			len++;
-		}
-		len--;
+		printf("pending negative number to binary");
+		return (0);
 	}
 	for (i = 0; num >= 1; i++)
 	{
