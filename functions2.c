@@ -8,12 +8,24 @@ int getBin(va_list args)
 {
 	int i, num, mod, *buffer, len;
 
+	len = 0;
+
 	buffer = malloc(BUFFSIZE);
 	if (buffer == NULL)
 	{
 		return ('\0');
 	}
 	num = va_arg(args, int);
+	if (num < 0)
+	{
+		num = num * -1;
+		for (i = 0; i < 21; i++)
+		{
+			_putchar('1');
+			len++;
+		}
+		len--;
+	}
 	for (i = 0; num >= 1; i++)
 	{
 		mod = num % 2;
@@ -21,7 +33,7 @@ int getBin(va_list args)
 		buffer[i] = mod;
 	}
 	i--;
-	for (len = 0; i >= 0; i--, len++)
+	for (; i >= 0; i--, len++)
 	{
 		_putchar(48 + buffer[i]);
 	}
