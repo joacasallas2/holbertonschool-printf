@@ -25,10 +25,11 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 |-----------|
 |1. [main.h](https://github.com/joacasallas2/holbertonschool-printf/tree/main/main.h)|
 |2. [_printf.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/printFunction.c)|
-|3. [main.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/main.c)|
-|4. [get_op_fun.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/get_function.c)|
-|5. [functions.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/functions.c)|  
-|6. [man_3_printf](https://github.com/joacasallas2/holbertonschool-printf/tree/main/man_3_printf)|  
+|3. [get_op_fun.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/get_function.c)|
+|4. [functions.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/functions.c)|  
+|5. [functions2.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/functions2.c)|  
+|6. [_putchar.c](https://github.com/joacasallas2/holbertonschool-printf/tree/main/_putchar.c)|  
+|7. [man_3_printf](https://github.com/joacasallas2/holbertonschool-printf/tree/main/man_3_printf)|  
 
 |Tasks|
 |-----------|
